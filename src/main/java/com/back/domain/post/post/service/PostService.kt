@@ -11,17 +11,19 @@ import org.springframework.transaction.annotation.Transactional
 class PostService(
     private val postRepository: PostRepository
 ) {
+    @Transactional(readOnly = true)
     fun count(): Long = postRepository.count()
 
+    @Transactional(readOnly = true)
     fun findById(id: Int): Post? = postRepository.findByIdOrNull(id)
 
     @Transactional
     fun modify(post: Post, title: String, content: String) {
-        post.title = title
-        post.content = content
+        post.modify(title, content)
     }
 
-    fun write(author: Member, title: String, content: String): Post {
+    @Transactional
+    fun write(author: Member?, title: String, content: String): Post {
         val post = Post(author, title, content)
         postRepository.save(post)
 

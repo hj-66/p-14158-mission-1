@@ -13,7 +13,7 @@ import org.springframework.transaction.annotation.Transactional
 class BaseInitData(
     private val memberService: MemberService,
     private val postService: PostService,
-    @param:Lazy private val self: BaseInitData?
+    @param: Lazy private val self: BaseInitData?
 ) {
 
     @Bean

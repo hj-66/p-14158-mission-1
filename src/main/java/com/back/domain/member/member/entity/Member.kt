@@ -11,6 +11,5 @@ class Member(
     var password: String,
     var nickname: String
 ) : BaseEntity() {
-
     override fun toString(): String = "Member(id=$id, username='$username', nickname='$nickname')"
 }

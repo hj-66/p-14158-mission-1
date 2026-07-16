@@ -9,10 +9,19 @@ import jakarta.persistence.ManyToOne
 @Entity
 class Post(
     @ManyToOne
-    val author: Member,
-
-    var title: String,
+    var author: Member? = null,
+    title: String = "",
+    content: String = "",
+) : BaseEntity() {
+    var title: String = title
+        protected set
 
     @Column(columnDefinition = "TEXT")
-    var content: String
-) : BaseEntity()
+    var content: String = content
+        protected set
+
+    fun modify(title: String, content: String) {
+        this.title = title
+        this.content = content
+    }
+}

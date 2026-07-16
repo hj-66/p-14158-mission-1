@@ -14,16 +14,16 @@ import jakarta.persistence.GenerationType.IDENTITY
 @EntityListeners(AuditingEntityListener::class)
 abstract class BaseEntity {
 
-    @field:Id
-    @field:GeneratedValue(strategy = IDENTITY)
+    @Id
+    @GeneratedValue(strategy = IDENTITY)
     var id: Int = 0
         protected set
 
-    @field:CreatedDate
+    @CreatedDate
     var createDate: LocalDateTime? = null
         protected set
 
-    @field:LastModifiedDate
+    @LastModifiedDate
     var modifyDate: LocalDateTime? = null
         protected set
 }
