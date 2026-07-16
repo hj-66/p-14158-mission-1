@@ -6,7 +6,7 @@ import jakarta.persistence.Entity
 
 @Entity
 class Member(
-    @field:Column(unique = true)
+    @Column(unique = true)
     val username: String,
     var password: String,
     var nickname: String

@@ -8,11 +8,11 @@ import jakarta.persistence.ManyToOne
 
 @Entity
 class Post(
-    @field:ManyToOne
-    var author: Member?,
+    @ManyToOne
+    val author: Member,
 
     var title: String,
 
-    @field:Column(columnDefinition = "TEXT")
+    @Column(columnDefinition = "TEXT")
     var content: String
 ) : BaseEntity()
