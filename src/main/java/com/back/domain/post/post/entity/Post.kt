@@ -9,7 +9,7 @@ import jakarta.persistence.ManyToOne
 @Entity
 class Post(
     @field:ManyToOne
-    var author: Member? = null,
+    var author: Member?,
 
     var title: String,
 
